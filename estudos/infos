@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+clear
+echo "Informações muitos importantes!"
+echo "-------------------------------"
+
+echo -n "Usuário : "
+whoami
+
+
+echo -n "Hostname: " 
+hostname
+
+echo -n "Uptime  : " 
+uptime -p 
+
+echo -n "Uname   : " 
+uname -rms
+
+echo "-------------------------------"

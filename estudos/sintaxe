@@ -1,0 +1,29 @@
+As váriaveis no bash são criadas da seguinte maneira:
+
+Váriaveis Escalares:(todas essas váriaveis abaixo são interpretadas como string)
+	fruta = "Banana"
+	idade = 20
+
+Array:
+	alunos = ("Luca" "Larissa")
+	alunos[0] = "Luca"
+	alunos[1] = "Larissa"
+
+Locais: Presentes apenas na sessão corrente do shell e disponiveis apenas para ele.
+
+As váriaveis locais, do ponto de vista do shell, são aquelas que nós criamos no terminal ou nos nossos scripts.
+Elas não podem ser acessadas por outros programas e são eliminadas assim que a sessão do shell termina.
+
+Comandos relacionados: exit (builtin)
+
+De ambiente: Disponiveis para todos os processos executados no shell.
+
+As variáveis de ambiente são definidas no ínicio da sessão do shell e podem ser configuradas pelo sistema no boot, por instaladores de programas ou pelo próprio usuário.
+Seu comportamento não é diferente das váriaveis locais, a não ser pelo fato de que elas ficam disponíveis para todos os programas.
+Essa diferença vem da forma como elas são criadas.
+
+Comandos relacionados: export (builtin) e env
+O comando export habilita a propriedadede exportação de uma variável de ambiente. 
+O utilitário env, quando executado sem argumentos exibe a lista completa de todos as variáveis de ambiente.
+
+Especiais: Que o próprio shell define, podendo ser tanto locais quanto de ambiente. 
