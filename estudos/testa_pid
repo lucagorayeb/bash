@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "PID do script: $$"
+exit 0

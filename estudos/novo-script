@@ -1,0 +1,38 @@
+#!/usr/bin/env bash 
+
+# Opções
+
+editor="vim"
+
+# Váriaveis
+
+dia_de_hoje=$( date +'%d/%m/%Y' ) 
+
+header="#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   :
+# Descrição:
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : $dia_de_hoje
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+"
+# Testar se passou o nome do nove script
+[[ $# -lt 1 ]] && echo "Precisa de pelo menos um nome de script para ser criado" && exit 1
+
+# Testar se passou mais de um argumento
+[[ $# -gt 1 ]] && echo "Somente um script pode ser criado por vez" && exit 1
+
+# Testar se o arquivo já existe
+[[ -f $1 ]] && echo "Já existe um script com esse nome" && exit 1
+
+echo "$header" > $1
+
+chmod +x $1
+
+$editor $1
+
+exit 0

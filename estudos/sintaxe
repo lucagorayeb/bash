@@ -26,4 +26,18 @@ Comandos relacionados: export (builtin) e env
 O comando export habilita a propriedadede exportação de uma variável de ambiente. 
 O utilitário env, quando executado sem argumentos exibe a lista completa de todos as variáveis de ambiente.
 
-Especiais: Que o próprio shell define, podendo ser tanto locais quanto de ambiente. 
+Especiais: Que o próprio shell define, podendo ser tanto locais quanto de ambiente.
+
+# Para saber a sessão do shell
+$$ --> Armazena o PID da sessão correntedo shell 
+
+# Para saber se um comando é builtin ou não
+$? --> Retorna o número do último comando (0 é comando bem sucedido) 
+test comando -eq 0 avalia se o comando é (sucesso) ou não (erro)
+
+# Não quero editar o script toda vez que quiser testar um comando 
+
+$0 --> É o comando corrente que está sendo executado e ele pode ser usado da forma $n onde o n é qualquer número da sequência
+       a frente do comando que foi executado antes.
+
+./builtin($0) comando($1) ...
