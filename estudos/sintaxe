@@ -39,5 +39,6 @@ test comando -eq 0 avalia se o comando é (sucesso) ou não (erro)
 
 $0 --> É o comando corrente que está sendo executado e ele pode ser usado da forma $n onde o n é qualquer número da sequência
        a frente do comando que foi executado antes.
-
 ./builtin($0) comando($1) ...
+
+$# --> Armazena o número de argumentos passados para o script 
