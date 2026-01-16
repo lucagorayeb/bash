@@ -5,9 +5,21 @@ Váriaveis Escalares:(todas essas váriaveis abaixo são interpretadas como stri
 	idade = 20
 
 Array:
+  Indexados:  
 	alunos = ("Luca" "Larissa")
 	alunos[0] = "Luca"
 	alunos[1] = "Larissa"
+	
+	Para saber quantos elemento tem em um array basta usar o comando echo ${#nome_array[@]} ou echo ${#nome_array[*]}
+	Para listar os elementos do array basta usar o comando echo ${nome_array[@]} ou echo ${nome_array[*]}
+	Para listar os indices do array basta usar o comando echo ${!nome_array[@]}
+
+  Associativos:
+
+	carro[vw]="Fusca"
+	carro[fiat]="147"
+
+	Para criar uma váriavel ou um array associativo usamos o declare -A nome_variavel
 
 Locais: Presentes apenas na sessão corrente do shell e disponiveis apenas para ele.
 
@@ -41,4 +53,6 @@ $0 --> É o comando corrente que está sendo executado e ele pode ser usado da f
        a frente do comando que foi executado antes.
 ./builtin($0) comando($1) ...
 
-$# --> Armazena o número de argumentos passados para o script 
+$# --> Armazena o número de argumentos passados para o script
+
+ 

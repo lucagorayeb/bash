@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : condicional_if
+# Descrição: Teste da condicional 
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 16/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso: É somente para testar o comando if
+# -----------------------------------------------------
+# IF simples
+if [ 5 -gt 7 ];then
+   echo "5 é maior"
+   else
+      echo "5 é menor"
+      exit
+fi

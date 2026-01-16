@@ -1,0 +1,8 @@
+Váriaveis no bash são váriaveis de qualquer linguagem de programação.
+Não pode ter caracteres além do uderline.
+Pode receber números e strings.
+
+aluno="Luca Siqueira Assis Gorayeb de Mello"
+comando=$(cat /etc/netplan/arquivo)
+numero=29
+$aluno

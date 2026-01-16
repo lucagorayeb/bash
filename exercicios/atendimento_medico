@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : atendimento_medico 
+# Descrição: Existem 3 médicos que atendem em turnos diferentes. 
+#            O usuário informa em qual turno quer se consultar.
+#            O programa exibe na tela o nome do médico
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 16/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso: ./atendimento_medico ou caminho/atendimento_medico
+# -----------------------------------------------------
+
+clear
+
+# Variaveis
+medico1="João"
+medico2="Luana"
+medico3="Larissa"
+read -p "Qual turno você gostaria de realizar a consulta? " turno
+
+# Teste
+[[ $turno = "Manhã" ]] || [[ $turno = "manhã" ]] && echo "A doutora $medico2 irá te atender "
+
+[[ $turno = "Tarde" ]] || [[ $turno = "tarde" ]] && echo "A doutora $medico3 irá te atender "
+
+[[ $turno = "Noite" ]] || [[ $turno = "noite" ]] && echo " O doutor $medico1 irá te atender "
+
+# Erros
+[[ $turno != "Manhã" ]] && [[ $turno = "Tarde" ]] && [[ $turno != "Noite" ]] && [[ $turno != "manhã" ]] && [[ $turno != "tarde" ]] && [[ $turno != "noite" ]] && echo "Resposta incorreta" && exit 1
+
+exit 0

@@ -1,0 +1,13 @@
+Comparadores Númericos 
+-lt -> menor que
+-gt -> maior que
+-le -> menor ou igual
+-ge -> maior ou igual
+-eq -> equal
+-ne -> não igual 
+
+Comparadores Alfanúmericos 
+= -> Texto é igual 
+!= -> Texto é diferente
+-n -> Texto não nulo 
+-z -> Texto é nulo 

@@ -1,0 +1,11 @@
+A condicional if no bash:
+
+if[ condiçaõ ];then
+   comando
+fi
+
+if[ condição ];then
+   comando
+   else
+	comando
+fi 

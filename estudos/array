@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : Array
+# Descrição: Faz a manipulação de dois arrays
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 15/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso: caminho/array ou ./array
+# -----------------------------------------------------
+
+clear
+
+echo "Exemplo de arrays indexados"
+
+frutas=("banana" "laranja" "abacate" "limão" "cereja" "abacaxi")
+cores=("amarela" "laranja" "verde" "verde" "vermelha" "amarela")
+
+read -p "Digite um número de 0 a 5: " numero
+
+[[ ! $numero =~ ^[0-5]$ ]] && echo -e "Tem que ser um número entre 0 e 5!" && exit 1
+
+echo "
+Você escolheu ${frutas[$numero]}, que é uma fruta ${cores[$numero]}. 
+"
+
+exit 0

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : array_associativo
+# Descrição: Testa arrays associativos
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 15/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso: caminho/array_associativa ou ./associativa
+# -----------------------------------------------------
+
+echo "Trabalahando com arrays associativos"
+
+declare -A aluno
+declare -A nota
+
+aluno[joao]="João"
+aluno[jose]="José"
+aluno[maria]="Maria"
+aluno[sofia]="Sofia"
+aluno[fatima]="Fátima"
+aluno[antonio]="Antônio"
+
+nota[joao]=10
+nota[jose]=9
+nota[maria]=10
+nota[sofia]=9
+nota[fatima]=8
+nota[antonio]=7
+
+echo "
+Os identificadores (índices) dos alunos são:
+${!aluno[*]} 
+
+E os seus nomes são:
+${aluno[*]}
+"
+
+exit 0
