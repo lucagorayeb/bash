@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : conecta_vm
+# Descrição: Conectar automaticamente na vm que eu quiser
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 18/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+tabela_das_VMs() {
+
+echo "
++-------------------------------------------+
+|	Tabela das Máquinas Virtuais        |
++-------------------------------------------+
++-------------+--------------+--------------+
+| Nome da VM  |   IP da VM   | Número da VM |
++-------------+--------------+--------------+
+| ntp-interno | 192.168.0.88 |      1       |
+---------------------------------------------
+| ntp-cliente | 192.168.0.60 |      2       |
+---------------------------------------------
+"
+
+}
+
+escolhe_vm() {
+	
+read -p "Escolha uma máquina virtual para conectar: " numero_vm
+
+case $numero_vm in
+	1) 
+		ip_vm=192.168.0.88
+		nome_vm="ntp-interno"
+		;;
+	2)
+		ip_vm=192.168.0.60 
+		nome_vm="ntp-cliente"
+		;;
+	*)
+		echo "Opção inválida. Por favor, escolha entre os números da tabela.";;
+esac
+
+}
+
+is_up() {
+	virsh list | grep $nome_vm 
+	if [ $? = 0 ]; then
+        	echo "VM já está ligada" && exit 1
+	fi
+}
+
+liga_vm() {
+	virsh start $nome_vm
+	if [ $? = 0 ]; then
+		echo "VM $nome_vm ligada com sucesso"
+	else
+		echo "Não foi possível ligar a VM" && exit 1
+	fi
+}
+
+tempo_espera() {
+	sleep 25s
+}
+
+conecta_vm() { 
+	ssh $ip_vm
+	if [ $? != 0 ]; then
+        	echo "Erro de conexão com $nome_vm de ip $ip_vm" && exit 1
+	fi
+}
+
+# Executa as funções
+tabela_das_VMs
+
+escolhe_vm
+
+is_up
+
+liga_vm
+
+tempo_espera
+
+conecta_vm
+
+exit 0
+
