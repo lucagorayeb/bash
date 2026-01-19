@@ -55,4 +55,22 @@ $0 --> É o comando corrente que está sendo executado e ele pode ser usado da f
 
 $# --> Armazena o número de argumentos passados para o script
 
- 
+Concatenação de String
+
+Aspas:
+
+(Quando não se usa aspas):
+No comando "echo" todos os caracteres invisíveis como, quebra de linha 
+mais de um espaço e tabulações são substítuidos por um espaço.
+
+Para fazer o ecape do caracter de espaço é usar a barra invertida antes do
+espaço.
+
+(Quando se usa aspas simples):
+Não leem o conteúdo da váriavel, mas enxegam como um valor literal.
+
+(Quando se usa aspas duplas): 
+Servem para interpretar o conteúdo da váriavel e manter a formatação do 
+que foi passado
+
+Símbolo de concatenação de strings (apend): +=
