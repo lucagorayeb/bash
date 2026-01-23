@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   :
+# Descrição:
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 21/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+teste=$(whoami)
+
+if [[ "$teste" != "root" ]]; then
+        echo "Precisa ser root" && exit 1
+fi

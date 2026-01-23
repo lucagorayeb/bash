@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : ubuntu_dominio
+# Descrição: Coloca uma máquina ubuntu no domínio 
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 21/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+# Verifica se é root
+
+if [[ "$teste" != "root" ]]; then
+         echo "Precisa ser root" && exit 1
+fi
+
+# Instala o certificado de rede 
+
+cp -r ../cert_TJRO-SSL-FWD.crt /usr/local/share/ca-certificates/
+
+update-ca-certificates
+
+# Instala o lynx 
+
+dpkg -i ../lynx/*.deb
+
+#instala os pacotes desejados
+
+pacotes={"realmd" "sssd-ad" "sssd-tools" "policykit-1" "libnss-sss" "libpam-sss" "adcli" "samba-common-bin" "oddjob" "oddjob-mkhomedir" "packagekit" "openssh-server"}
+
+for pacote in pacotes; do
+	apt install -y $pacote
+done
+
+# Realiza a descoberta do domínio
+
+read -p $(realm discover PVHDC2.PJRO.LOCAL) dominio
+
+# Inserir no AD
+
+read -p "Digite o seu cadastro: " cadastro
+
+realm join PJRO.LOCAL -U $cadastro
+
+getent passwd $cadastro@pjro.local
+
+# Criar o arquivo sudoers do pjro 
+
+while [ resposta!="N" ]
+do
+	read -p "Digite o grupo que \
+		o usuário está presente no AD \
+		para ter permissão de sudo: \ 
+		(Formato Aceito: %G_nome-do-grupo@PJRO.LOCAL \
+	       	ALL=(ALL:ALL) ALL)" grupo
+	
+	echo $grupo > /etc/sudoers.d/pjro
+
+	read -p "Deseja adicionar mais um grupo? [S/N] " resposta
+done
+
+# Editar o arquivo sssd.conf
+
+echo "[sssd]
+domains = pjro.local
+config_file_version = 2
+services = nss, pam, ssh
+
+[domain/pjro.local]
+default_shell = /bin/bash
+krb5_store_password_if_offline = True
+cache_credentials = True
+krb5_realm = PJRO.LOCAL
+realmd_tags = manages-system joined-with-adcli
+id_provider = ad
+fallback_homedir = /home/%u
+ad_domain = pjro.local
+use_fully_qualified_names = True
+ldap_id_mapping = True
+access_provider = simple" > /etc/sssd/sssd.conf
+
+pam-auth-update --enable mkhomedir
