@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # -----------------------------------------------------
-# Script   : ubuntu_dominio
-# Descrição: Coloca uma máquina ubuntu no domínio 
+# Script   : red_hat_dominio 
+# Descrição: Coloca uma máquina red hat no domínio 
 # Versão   : 0.1
 # Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
 # Data     : 21/01/2026
@@ -26,31 +26,28 @@ echo $tombo > /etc/hostname
 
 # Instala o certificado de rede 
 
-cp -r ./cert_TJRO-SSL-FWD.crt /usr/local/share/ca-certificates/
+cp -r ./cert_TJRO-SSL-FWD.crt /etc/pki/ca-trust/source/anchors/
 
-update-ca-certificates
+update-ca-trust extract
 
 # Instala o lynx 
 
-dpkg -i ./lynx/*.deb
+sudo dnf download lynx -y
+sudo dnf install ./lynx* -y
 
 # Autentica na rede
 lynx pudim.com
 
-# Atualiza
-apt update
-apt upgrade -y
-
 #instala os pacotes desejados
 
-pacotes="realmd sssd-ad sssd-tools policykit-1 libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit openssh-server"
+pacotes="samba-common-tools realmd oddjob oddjob-mkhomedir sssd adcli krb5-workstation openssh-server"
 
-apt install -y $pacotes
+dnf install -y $pacotes
 
 # Caso tenha erro de dependencia
 if [[ $? -ne 0 ]];then
-	apt --fix-broken install
-	apt install -y $pacotes
+        dnf --fix-broken install
+        dnf install -y $pacotes
 fi
 
 # Realiza a descoberta do domínio

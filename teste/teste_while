@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   :
+# Descrição:
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 23/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+while [ "$resposta" != "N" ]
+do
+        echo  "Digite o grupo que \
+                o usuário está presente no AD \
+                para ter permissão de sudo:\
+                (Formato Aceito: %G_nome-do-grupo@PJRO.LOCAL ALL=(ALL:ALL) ALL)"
+        read grupo
+
+        echo $grupo > /etc/sudoers.d/pjro
+
+        read -p "Deseja adicionar mais um grupo? [S/N] " resposta
+done
+

@@ -74,3 +74,23 @@ Servem para interpretar o conteúdo da váriavel e manter a formatação do
 que foi passado
 
 Símbolo de concatenação de strings (apend): +=
+
+Let: 
+
+O comando let serve para declarar expressões aritmeticas 
+
+let valor=19
+
+let valor+=13 (Soma 13 com 19)
+
+let valor=valor+13 (Soma 32 com 13)
+
+let valor=$valor+13 (Soma 45 com 13)
+
+(( valor = valor + 13 )) (Mesma sintaxe do let)
+
+(( valor = valor + 13, valor = 10 )) (Recebe vários valores)
+
+$(( valor = valor + 13 )) (Mesma sintaxe do let)
+
+declare -i var="5/0" 
