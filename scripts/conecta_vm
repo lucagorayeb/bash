@@ -49,7 +49,7 @@ esac
 is_up() {
 	virsh list | grep $nome_vm 
 	if [ $? = 0 ]; then
-        	echo "VM já está ligada" && exit 1
+        	echo "VM já está ligada" && conecta_vm && exit 1
 	fi
 }
 

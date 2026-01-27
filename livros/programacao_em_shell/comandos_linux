@@ -1,0 +1,110 @@
+Comandos que interagem com arquivos:
+
+pwd -> Exibe o caminho completo do diretório atual.
+
+cd -> Mover entre diretórios.
+
+ls -> Lista o conteúdo dos diretórios.
+	Opções:
+		-a Lista até os diretórios ocultos.
+		-l Lista o conteúdo de forma detalhada.
+		-r Lista na ordem alfabetica reversa.
+		-h Combinado com o -l imprime o tamanho de
+		   forma mais legível.
+		-R Lista também os subdiretórios encontrados.
+	
+	Aceita alguns parâmetros de regex.
+
+cp -> Copia arquivos.
+	Opções:
+		-i Modo interativo onde o comando pergunta se o usuário
+		   quer ou não sobreescrever o arquivo. 
+		-v Mostra o que está sendo copiado.
+		-r Copia recursivamente (diretórios e subdiretórios).
+
+mv -> Move arquivos entre diretórios ou renomeia um aquivo.
+	Opções:
+		-f Não pergunta se o usuário quer sobreescrever o arquivo.
+
+ln -> Comando usado para criar links. Existem dois tipos de links,
+      hard link e o link simbólico.
+	
+	Hard Link:
+		O arquivo que é o hard link tem o mesmo inode do aquivo de origem,
+		os dois compartilham os dados.
+	
+	Link Simbólico:
+		O arquivo que é o link simbólico tem o inode diferente do arquivo de origem,
+		o conteúdo do link simbólico é o caminho para o arquivo de origem.	
+
+mkdir -> Cria um diretório.
+
+rmdir -> Remove um diretório, mas somente se ele estiver vazio.
+
+rm -> Deleta arquivos e diretórios.
+	Opções:
+		-f Ignora arquivos exitentes e não pede confirmação antes de remover.
+		-I Sempre pede confirmação antes de devolver.
+		-r Remove os diretórios especificados e seus contéudos, recursivamente.
+
+	Aceita alguns parâmetros de regex.
+
+file -> Indica o tipo de arquivo de acordo com o padrões do sistema operacional.
+
+grep -> Pesquisa arquivos por contéudo.
+	Opções:
+		-c Somente a quantidade de linhas que casarem com uma expressão regular.
+		-i Não diferencia maiúsculas e minúsculas.
+		-l Não mostra a linha encontrada, somente o nome do arquivo.
+		-v Inverte a procura e mostra tudo aquilo que for diferente do conteúdo passado.
+		-n Precede cada linha com seu número relativo dentro de arquivo.
+
+find -> Procura arquivos por característica, como nome, caminho do dirtório, expressões.
+	Opções:
+		Expressões:
+			-name nome Procura arquivos que tenham o nome especificado. Podem ser
+			 usados todos os tipos de metacaracteres, mas eles devem estar entre 
+			 aspas.
+			
+			-user usuário Procura arquivos que tenham o usuário passado como dono.
+
+			-group grupo Procura arquivos que pertencem ao grupo passado.
+
+			-type c Procura por arquivos que tenham o tipo c, correspondente à letra 
+			 do tipo do arquivo.
+				Tipos aceitos:
+					b Arquivo especial acessado a bloco.
+					c Arquivo especial acessado a caractere.
+					d Diretório.
+					p Named pipe (FIFO).
+					f Arquivo normal.
+					l Link Simbólico.
+					s Socket.
+			
+			-size +/-n[bckw] Procura arquivos que usam mais (+n) de n unidades de espaço 
+					 ou a menos (-n).
+				Unidade		Valor
+				   b		Bloco de 512 bytes (valor default).
+				   c		Caractere.
+				   k		Kilobytes (1024 bytes).
+				   w		Palavras (2 bytes).
+			
+			-atime +/-d Procura por arquivos que foram acessados há mais (+d) de d dias ou a menos (-d).
+
+			-ctime +/-d Procura por arquivos cujo status mudou há mais (+d) de d dias ou a menos(-d).
+			
+			-mtime +/-d Procura por arquivos cujos dados foram modificados há mais de (+d) e menos (-d).
+		
+		Ações: 
+			-print Essa opção faz com que os arquivos encontrados sejam exibidos na tela. Essa é a opção 
+			 default no Linux.
+
+			-exec cmd {} \; Executa o comando cmd. O escopo de comando é considerado encerrado quando um ponto 
+					e vírgula (;) é encontrado. A cadeia {} é substituída pelo nome de cada arquivo que 
+					satisfaz ao critério de pesquisa da linha assim formada é executada. O ponto e vírgula 
+					deve ser precedido por uma contrabarra  ou deve estar em aspas ou apóstrofo.
+			
+			-ok cmd {} \; O mesmo do comando anterior, mas pergunta se pode executar o a instrução cmd sobre cada arquivo
+				      que atende o critério de pesquisa.
+			
+			-printf formato Permite que escolha os campos que serão listados e formata a saída de acordo com o formato.  
