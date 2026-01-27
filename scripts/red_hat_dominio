@@ -97,6 +97,7 @@ ldap_id_mapping = True
 access_provider = simple" > /etc/sssd/sssd.conf
 
 pam-auth-update --enable mkhomedir
+session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
 
 # Instala o antivírus
 tar -xf ./TrendMicro-Linux/TMServerAgent_Linux_auto_x86_64_Server_and_Workload_Protection.tar
