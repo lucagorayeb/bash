@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : cria_repositório
+# Descrição: Script para criar repositórios de forma rápida
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 27/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso: 
+# -----------------------------------------------------
+
+read -p "Nome do repositório: " nome_repositorio
+echo "$nome_repositorio" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+read -p "Qual o caminho ssh/https do repositório? " caminho_repo
+git remote add origin $caminho_repo
+git push -u origin main

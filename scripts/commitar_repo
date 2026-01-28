@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : commitar_repo
+# Descrição: Commita o repositorio a partir de uma branch
+# 	     da minha escolha.
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 28/01/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+git add .
+
+echo "Qual vai ser a mensagem do commit?" 
+read -p "> " commit
+git commit -m "$commit"
+
+echo "Qual branch você deseja commitar?" 
+read -p "> " branch
+git push origin $branch
