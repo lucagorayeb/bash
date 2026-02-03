@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : open_book 
+# Descrição: Abrir um livro na pasta que eu tenho que é 
+# 	     somente para deixar os livros.
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 01/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+clear
+cd /home/luca/Documentos/tecnologia/livros
+echo "---------------------------------------"
+echo "|  Bem-vindo ao diretório de livros   |"
+echo "---------------------------------------"
+
+sleep 0.5
+
+echo "---------------------------------------"
+echo "| Os diretórios existentes são esses: | "
+echo "---------------------------------------"
+
+ls
+
+read -p "Qual o diretório que deseja acessar? " diretorio
+
+cd $diretorio
+
+echo "---------------------------------------"
+echo "|  Bem vindo ao diretório $diretorio\t|"
+echo "---------------------------------------"
+
+sleep 0.5
+
+echo "---------------------------------------"
+echo "|     Escolha um livro para abrir.    |"
+echo "---------------------------------------"
+
+ls
+
+echo ""
+read -p "Qual livro deseja abrir? " livro
+
+open $livro
