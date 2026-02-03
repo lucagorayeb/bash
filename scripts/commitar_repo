@@ -20,3 +20,5 @@ git commit -m "$commit"
 echo "Qual branch você deseja commitar?" 
 read -p "> " branch
 git push origin $branch
+
+echo "O commit foi feito com sucesso"
