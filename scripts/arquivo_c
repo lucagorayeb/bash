@@ -36,4 +36,6 @@ else
 	echo "$header" > $1 
 fi
 
+vim $1
+
 exit 0
