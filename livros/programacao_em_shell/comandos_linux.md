@@ -107,4 +107,59 @@ find -> Procura arquivos por característica, como nome, caminho do dirtório, e
 			-ok cmd {} \; O mesmo do comando anterior, mas pergunta se pode executar o a instrução cmd sobre cada arquivo
 				      que atende o critério de pesquisa.
 			
-			-printf formato Permite que escolha os campos que serão listados e formata a saída de acordo com o formato.  
+			-printf formato Permite que escolha os campos que serão listados e formata a saída de acordo com o formato.
+
+cat -> Exibe o contéudo dos arquivos
+
+    Opções:
+            -v -> Mostra os caracteres sem representação na tela 
+
+            -e -> Mostra os LINE_FEED (ENTER)
+            
+            -t -> Mostra as <TAB>
+
+            -n -> Númera as linhas
+
+wc -> Conta os caracteres, palavras e/ou linhas dos aquivos 
+    
+        
+    Opções: 
+            -l -> conta as linhas
+            
+            -w -> conta as palavras
+
+            -c -> conta os caracteres
+
+sort -> Ordena o contéudo dos arquivos
+
+    Opções:
+            arq -> Arquivo de entrada a ordenar, que será exibido na saída padrão. Se arq for omitido,
+                   os dados a classificar serão recebidos da entrada padrão.
+
+head -> Exibe as primeiras linhas do arquivo
+
+    Opções:
+            -numero -> Mosta a quantidade de linhas do arquivo. Se o parâmetro número não foer especificado,
+                       head mostra as primeiras 10 linhas de arquivo;
+
+            -c, --bytes=tamanho -> Mosta o tamanho dos caracteres(bytes), pode vir sucedido de um 
+                                   multiplicador b, k, m.
+
+            -n, -l, --lines =numero -> Mosta a quantidade de primeiras linhas.
+
+tail -> Exibe a parte final do arquivo 
+
+    Opções:
+
+            + numero -> Mosta os arquivos a partir da linha do número informado. Se numero não for 
+                        passado o tail vai mostrar as últimas 10 linhas.
+
+            - numero -> Mostra as últimas linhas de acordo com a quantidade passada pelo parâmetro 
+                        número. Se não for informado irá mostrar 10 por padrão.
+
+            -c, --bytes=tamanho -> Mosta o tamanho dos caracteres(bytes), pode vir sucedido de um
+                                   multiplicador b, k, m.
+
+            -n, -l, --lines =numero -> Mosta a quantidade de primeiras linhas.
+
+            -f -> Exibe na tela as linhas do arquivo à medida que ele cresce.

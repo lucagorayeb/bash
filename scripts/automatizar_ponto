@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : automatizar_ponto
+# Descrição:
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 06/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+lynx -cmd_script=comando_para_automatizar_ponto.txt -accept_all_cookies https://app.tjro.jus.br/ctrponto/RegPonto.asp
+
+sleep 3

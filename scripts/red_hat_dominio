@@ -60,14 +60,14 @@ read -p "Digite o seu cadastro: " cadastro
 
 realm join PJRO.LOCAL -U $cadastro
 
-getent passwd $cadastro@pjro.local
+getent passwd "$cadastro@pjro.local"
 
 # Criar o arquivo sudoers do pjro 
 
 while [ "$resposta" != "N" ]
 do
 	echo  "Digite o grupo que o usuário está presente no AD	para ter permissão de sudo:"
-	echo  "Formato Aceito: %G_nome-do-grupo@PJRO.LOCAL ALL=(ALL:ALL) ALL" 
+	echo  "Formato Aceito: %G_nome-do-grupo@pjro.local ALL=(ALL:ALL) ALL" 
 	echo ""
 	read -p " > " grupo
 	
@@ -95,9 +95,6 @@ ad_domain = pjro.local
 use_fully_qualified_names = True
 ldap_id_mapping = True
 access_provider = simple" > /etc/sssd/sssd.conf
-
-pam-auth-update --enable mkhomedir
-session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
 
 # Instala o antivírus
 tar -xf ./TrendMicro-Linux/TMServerAgent_Linux_auto_x86_64_Server_and_Workload_Protection.tar
