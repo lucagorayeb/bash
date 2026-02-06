@@ -11,6 +11,8 @@
 # Uso:
 # -----------------------------------------------------
 
+git pull
+
 git add .
 
 echo "Qual vai ser a mensagem do commit?" 

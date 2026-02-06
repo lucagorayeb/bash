@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : remap133
+# Descrição: Faz o remape da tecla 133 para a ser o backspace.
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 06/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+sleep 30
+
+xmodmap -e "keycode 133 = BackSpace BackSpace BackSpace BackSpace"
