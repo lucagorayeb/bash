@@ -1,0 +1,15 @@
+Login=510905&senha=A5&1Rc#3k-E19d!
+
+key <tab>
+key <return>
+key <tab>
+key <tab>
+key <tab>
+key <tab>
+key <tab>
+key <tab>
+key <tab>
+key <tab>
+key <return>
+key q
+key q

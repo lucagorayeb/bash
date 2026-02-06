@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : descobre_dia_do_aniversario
+# Descrição: Descobre o dia que vai cair o seu 
+# 	     aniversário.
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 05/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+read -p "Qual a data do seu anivérsário? [dd-mm] " data_aniversario
+
+mes_aniversario=$(echo ${data_aniversario:3})
+
+dia_aniversario=$(echo ${data_aniversario%%-*})
+
+case $mes_aniversario in
+	01)
+		mes="Jan"
+		;;
+	02) 
+		mes="Feb"
+		;;
+	03) 
+		mes="Mar"
+		;;
+	04)
+		mes="Apr"
+		;;
+	05)	
+		mes="May"
+		;;
+	06)
+		mes="Jun"
+		;;
+	07)
+		mes="Jul"
+		;;
+	08) 
+		mes="Oug"
+		;;
+	09)
+		mes="Sep"
+		;;
+	10)
+		mes="Oct"
+		;;
+	11)
+		mes="Nov"
+		;;
+	12)
+		mes="Dec"
+		;;
+esac
+
+date --date="$dia_aniversario $mes" +%a
