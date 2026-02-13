@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : estudo_rhcsa
+# Descrição: Script com o intuito de automatizar a 
+# 	     abertura dos conteúdos que irei usar para
+# 	     estudar para rhcsa da red hat. 
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 13/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+conteudos = ["" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""]
+
+menu_conteudos(){
+    echo "+----------------------------------------------------+"
+    echo "|        Conteúdos para estudar para a RHCSA         |"
+    echo "+----------------------------------------------------+"
+    echo "|  1  | Step by step how to pass in RHCSA            |"
+    echo "|  2  | RHCSA exame 8                                |"
+    echo "|  3  | RHCSA exame 9                                |"
+    echo "|  4  | RHCSA exame 10                               |"
+    echo "|  5  | RHCSA exame 9 questões resolvidas            |"
+    echo "|  6  | Dicas de como passar                         |"
+    echo "|  7  | Dicas de como passar                         |"
+    echo "|  8  | Dicas de como passar                         |"
+    echo "|  9  | RHCSA exame 9                                |"
+    echo "| 10  | RHCSA exame 9                                |"
+    echo "| 11  | Dicas de como passar                         |"
+    echo "| 12  | Livro Red Hat 8 teste prático                |"
+    echo "| 13  | Livro RHCSA e RHCE guia de estudo            |"
+    echo "+----------------------------------------------------+"
+}
+
+escolhe_opcao(){
+	menu_conteudo
+	echo ""
+	read -p "Digite uma opção: " opcao
+	funcao_conteudos
+}
+
+# 1 https://www.youtube.com/playlist?list=PLlr7wO747mNr3DQnprOi51GtsB39pCV7k
+# 2 https://www.youtube.com/playlist?list=PL8cE5Nxf6M6ZHEt4-CgdvbMyJ3hRAoth3
+# 3 https://www.youtube.com/playlist?list=PLIq0cWorv-oyhSbUlzI-DkzceBkWUz1S9
+# 4 https://www.youtube.com/playlist?list=PL9LY4jTSNS21rebzsr4pkor_J7rOGLde5
+# 5 https://www.youtube.com/playlist?list=PLlr7wO747mNrUoTuXhZ0REJw3hL4oWvLm
+# 6 https://www.youtube.com/watch?v=cR8n5uJFRtA
+# 7 https://www.youtube.com/watch?v=26XWLKPGVyQ
+# 8 https://www.youtube.com/watch?v=xShNiJ0rwmQ
+# 9 https://www.youtube.com/@harunaadoga/playlists
+# 10 https://www.youtube.com/playlist?list=PLiI_-JOspy6G5inIwlYr4AnFgexn8uUXz
+# 11 https://www.youtube.com/watch?v=c-7sX_WBDWk
+# 12 red_hat_rhcsa_8_teste_pratico.pdf
+# 13 rhcsa_rhce_guia_estudo.pdf
+

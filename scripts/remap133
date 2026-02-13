@@ -10,6 +10,8 @@
 # Uso:
 # -----------------------------------------------------
 
-sleep 30
-
 xmodmap -e "keycode 133 = BackSpace BackSpace BackSpace BackSpace"
+ 
+xmodmap -e "keycode 22 = "     
+
+#xmodmap -e "keycode 22 = BackSpace BackSpace BackSpace BackSpace"                    

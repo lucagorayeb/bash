@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : abre_playlist_lofi_ff
+# Descrição: Abre um playlista lofi no Firefox para eu escutar uma
+# 	     música tranquila enquanto estudo ou leio.
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 13/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+firefox --new-window https://www.youtube.com/playlist?list=PL_thX6IS3ShCmuP1xoBszdrpeQv_Q2G_h &
+
+
