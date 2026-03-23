@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # -----------------------------------------------------
-# Script   : arquivo_c
+# Script   : arquivo_c_code.sh
 # Descrição: Cria um arquivo c básico 
 # Versão   : 0.1
 # Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
@@ -14,12 +14,12 @@
 dia_de_hoje=$( date +'%d/%m/%Y' )
 
 header="// -----------------------------------------------------
-// Script     :
-// Description:
-// Version    : 0.1
-// Author     : Luca Gorayeb <lucagorayeb@gmail.com>
-// Date       : $dia_de_hoje
-// License    : GNU/GPL v3.0
+// Script   :
+// Descrição:
+// Versão   : 0.1
+// Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+// Data     : $dia_de_hoje
+// Lincença : GNU/GPL v3.0
 // ----------------------------------------------------- 
 #include <stdio.h> 
 
@@ -36,6 +36,6 @@ else
 	echo "$header" > $1 
 fi
 
-vim $1
+code $1
 
 exit 0
