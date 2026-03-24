@@ -12,34 +12,97 @@
 # Uso:
 # -----------------------------------------------------
 
-conteudos = ["" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""]
 
 menu_conteudos(){
     echo "+----------------------------------------------------+"
     echo "|        Conteúdos para estudar para a RHCSA         |"
     echo "+----------------------------------------------------+"
-    echo "|  1  | Step by step how to pass in RHCSA            |"
-    echo "|  2  | RHCSA exame 8                                |"
-    echo "|  3  | RHCSA exame 9                                |"
-    echo "|  4  | RHCSA exame 10                               |"
-    echo "|  5  | RHCSA exame 9 questões resolvidas            |"
-    echo "|  6  | Dicas de como passar                         |"
-    echo "|  7  | Dicas de como passar                         |"
-    echo "|  8  | Dicas de como passar                         |"
-    echo "|  9  | RHCSA exame 9                                |"
-    echo "| 10  | RHCSA exame 9                                |"
-    echo "| 11  | Dicas de como passar                         |"
-    echo "| 12  | Livro Red Hat 8 teste prático                |"
-    echo "| 13  | Livro RHCSA e RHCE guia de estudo            |"
+    echo "|  A  | Step by step how to pass in RHCSA            |"
+    echo "|  B  | RHCSA exame 8                                |"
+    echo "|  C  | RHCSA exame 9                                |"
+    echo "|  D  | RHCSA exame 10                               |"
+    echo "|  E  | RHCSA exame 9 questões resolvidas            |"
+    echo "|  F  | Dicas de como passar                         |"
+    echo "|  G  | Dicas de como passar                         |"
+    echo "|  H  | Dicas de como passar                         |"
+    echo "|  I  | RHCSA exame 9                                |"
+    echo "|  J  | RHCSA exame 9                                |"
+    echo "|  K  | Dicas de como passar                         |"
+    echo "|  L  | Livro Red Hat 8 teste prático                |"
+    echo "|  M  | Livro RHCSA e RHCE guia de estudo            |"
     echo "+----------------------------------------------------+"
 }
 
 escolhe_opcao(){
-	menu_conteudo
+	clear
+	menu_conteudos
 	echo ""
 	read -p "Digite uma opção: " opcao
-	funcao_conteudos
+	
+	if [[ "$opcao" == "M" || "$opcao" ==  "L" ]]; then
+		abre_livro "$opcao"
+	else
+	 	abre_link "$opcao"
+        fi
 }
+
+abre_link(){
+
+	case $opcao in
+		A)
+			link=https://www.youtube.com/playlist?list=PLlr7wO747mNr3DQnprOi51GtsB39pCV7k
+			;;
+		B)
+			link=https://www.youtube.com/playlist?list=PL8cE5Nxf6M6ZHEt4-CgdvbMyJ3hRAoth3
+			;;
+		C)
+			link=https://www.youtube.com/playlist?list=PLIq0cWorv-oyhSbUlzI-DkzceBkWUz1S9
+			;;
+		D)
+ 			link=https://www.youtube.com/playlist?list=PL9LY4jTSNS21rebzsr4pkor_J7rOGLde5
+			;;
+		E)	
+			link=https://www.youtube.com/playlist?list=PLlr7wO747mNrUoTuXhZ0REJw3hL4oWvLm
+			;;
+		F)	
+			link=https://www.youtube.com/watch?v=cR8n5uJFRtA
+			;;
+		G) 	
+			link=https://www.youtube.com/watch?v=26XWLKPGVyQ
+			;;
+		H)	
+			link=https://www.youtube.com/watch?v=xShNiJ0rwmQ
+			;;
+		I)	
+			link=https://www.youtube.com/@harunaadoga/playlists
+			;;
+			
+		J)	
+			link=https://www.youtube.com/playlist?list=PLiI_-JOspy6G5inIwlYr4AnFgexn8uUXz
+			;;
+			
+		K)	
+			link=https://www.youtube.com/watch?v=c-7sX_WBDWk
+			;;
+	esac
+
+		firefox --new-window $link &
+}
+
+abre_livro(){
+        case $opcao in
+                L)
+                        livro=red_hat_rhcsa_8_teste_pratico.pdf
+                        ;;
+                M)
+                        livro=rhcsa_rhce_guia_estudo.pdf
+                        ;;
+        esac
+
+	open ~/Documentos/tecnologia/livros/linux/$livro
+
+}
+
 
 # 1 https://www.youtube.com/playlist?list=PLlr7wO747mNr3DQnprOi51GtsB39pCV7k
 # 2 https://www.youtube.com/playlist?list=PL8cE5Nxf6M6ZHEt4-CgdvbMyJ3hRAoth3
@@ -55,3 +118,4 @@ escolhe_opcao(){
 # 12 red_hat_rhcsa_8_teste_pratico.pdf
 # 13 rhcsa_rhce_guia_estudo.pdf
 
+escolhe_opcao

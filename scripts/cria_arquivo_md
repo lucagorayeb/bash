@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------
+# Script   : cria_arquivo_md
+# Descrição: Para facilitar a criação de um arquivo md.
+# Versão   : 0.1
+# Autor    : Luca Gorayeb <lucagorayeb@gmail.com>
+# Data     : 14/02/2026
+# Lincença : GNU/GPL v3.0
+# -----------------------------------------------------
+# Uso:
+# -----------------------------------------------------
+
+vim $1.md 
